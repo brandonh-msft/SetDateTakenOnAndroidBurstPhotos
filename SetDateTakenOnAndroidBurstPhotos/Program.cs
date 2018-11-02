@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Text;
 
 namespace SetDateTakenOnAndroidBurstPhotos
 {
@@ -23,7 +25,12 @@ namespace SetDateTakenOnAndroidBurstPhotos
         {
             foreach (var photoFilePath in photos)
             {
-                ExifLibrary.ExifPropertyFactory.Get()
+                using (Bitmap bmp = new Bitmap(photoFilePath))
+                {
+                    var dateTaken = bmp.GetPropertyItem(256);
+
+                    Console.WriteLine(Encoding.Default.GetString(dateTaken.Value));
+                }
             }
         }
 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SetDateTakenOnAndroidBurstPhotos": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\hurlburb\\OneDrive\\Pictures\\Camera Roll 1\""
+    }
+  }
+}
